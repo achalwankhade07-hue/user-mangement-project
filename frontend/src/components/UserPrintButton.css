@@ -1,0 +1,107 @@
+/* Print Mode ke bahar website par ye template hidden rahega */
+.printable-form-wrapper {
+  display: none;
+}
+
+@media print {
+  /* Hide all normal page content */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only the printable document */
+  .printable-form-wrapper,
+  .printable-form-wrapper * {
+    visibility: visible;
+  }
+
+  .printable-form-wrapper {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    font-family: "Times New Roman", Times, serif;
+    color: #000000;
+    background: #ffffff;
+  }
+
+  /* Document Title */
+  .form-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Top Header Lines (Company Name / Date) */
+  .top-header-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .top-header-col {
+    width: 45%;
+    text-align: center;
+  }
+
+  /* Gray Banners */
+  .form-banner {
+    background-color: #595959 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 4px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  /* Field Rows */
+  .form-row {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 18px;
+    width: 100%;
+  }
+
+  .form-label {
+    font-weight: normal;
+    font-size: 14px;
+    white-space: nowrap;
+    padding-right: 10px;
+  }
+
+  /* Underlines and Sub-captions */
+  .underline-field {
+    border-bottom: 1px solid #000;
+    flex: 1;
+    text-align: center;
+    min-height: 22px;
+    font-size: 14px;
+  }
+
+  .three-col-group {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+  }
+
+  .col-item {
+    flex: 1;
+    text-align: center;
+  }
+
+  .sub-caption {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 3px;
+    color: #333;
+  }
+}
